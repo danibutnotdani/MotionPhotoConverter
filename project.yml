@@ -1,0 +1,45 @@
+name: MotionPhotoConverter
+options:
+  bundleIdPrefix: com.danielrm
+  developmentLanguage: es
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: BGHG2973L4
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  MotionPhotoConverter:
+    type: application
+    supportedDestinations: [iOS, macOS]
+    deploymentTarget:
+      iOS: "26.0"
+      macOS: "15.0"
+    sources: [App]
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Motion a Live
+        CFBundleName: Motion a Live
+        CFBundleDevelopmentRegion: es-MX
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        NSPhotoLibraryUsageDescription: Para leer tus Motion Photos y guardarlas como Live Photos.
+        NSPhotoLibraryAddUsageDescription: Para guardar las Live Photos convertidas.
+        LSApplicationCategoryType: public.app-category.photography
+    entitlements:
+      path: App/MotionPhotoConverter.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.personal-information.photos-library: true
+        com.apple.security.files.user-selected.read-write: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.danielrm.motionphotoconverter
+        TARGETED_DEVICE_FAMILY: "1,2"
+        MACOSX_DEPLOYMENT_TARGET: "15.0"
+        IPHONEOS_DEPLOYMENT_TARGET: "26.0"
+        ENABLE_HARDENED_RUNTIME: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
